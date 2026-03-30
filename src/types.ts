@@ -20,19 +20,28 @@ export interface Workout {
 }
 
 export interface SetTemplate {
-  reps: number
+  reps: number | string
   weight?: number
 }
 
 export interface ExerciseTemplate {
   name: string
   sets: SetTemplate[]
+  load?: string
   notes?: string
+}
+
+export interface RoutineDay {
+  name: string
+  subtitle: string
+  icon?: string
+  exercises: ExerciseTemplate[]
+  notes?: string[]
 }
 
 export interface RoutineDefinition {
   id: string
   name: string
   description: string
-  exercises: ExerciseTemplate[]
+  days: RoutineDay[]
 }
