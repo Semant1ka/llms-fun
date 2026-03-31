@@ -7,9 +7,14 @@ export function useWorkouts() {
   const [loading, setLoading] = useState(true)
 
   const reload = useCallback(async () => {
-    const all = await getAllWorkouts()
-    setWorkouts(all.sort((a, b) => b.startedAt - a.startedAt))
-    setLoading(false)
+    try {
+      const all = await getAllWorkouts()
+      setWorkouts(all.sort((a, b) => b.startedAt - a.startedAt))
+    } catch (e) {
+      console.error('Failed to load workouts:', e)
+    } finally {
+      setLoading(false)
+    }
   }, [])
 
   useEffect(() => {

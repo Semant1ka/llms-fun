@@ -32,7 +32,7 @@ export default function App() {
 
   if (loading) {
     return (
-      <div className="min-h-full flex items-center justify-center text-slate-500">
+      <div className="h-screen flex items-center justify-center text-slate-400">
         Loading...
       </div>
     )

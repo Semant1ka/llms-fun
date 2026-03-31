@@ -8,7 +8,7 @@ export function Layout({
   children: ReactNode
 }) {
   return (
-    <div className="min-h-full flex flex-col">
+    <div className="min-h-screen flex flex-col">
       <header className="bg-slate-800 border-b border-slate-700 px-4 py-3">
         <h1 className="text-lg font-semibold">{title}</h1>
       </header>
